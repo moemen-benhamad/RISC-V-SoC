@@ -38,3 +38,7 @@ Thumbs.db            # Windows
 .vscode/             # Visual Studio Code
 *.swp                # vi/vim
 *.swo                # vi/vim
+
+# Quartus project files
+TP-A_description.txt
+c5_pin_model_dump.txt
