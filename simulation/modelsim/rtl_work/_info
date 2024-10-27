@@ -1,0 +1,88 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dO:/SLE 3A S9/Systeme sur puce/TP - A/simulation/modelsim
+Econtroleur
+Z1 w1729665492
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8O:/SLE 3A S9/Systeme sur puce/TP - A/controleur.vhd
+Z5 FO:/SLE 3A S9/Systeme sur puce/TP - A/controleur.vhd
+l0
+L4
+V=lB=>a`73e16`iS=cFXCa3
+!s100 ;S6U>3UZIalc9Ld9XYCzj0
+Z6 OV;C;10.3d;59
+31
+Z7 !s110 1729670906
+!i10b 1
+Z8 !s108 1729670906.339000
+Z9 !s90 -reportprogress|300|-93|-work|work|O:/SLE 3A S9/Systeme sur puce/TP - A/controleur.vhd|
+Z10 !s107 O:/SLE 3A S9/Systeme sur puce/TP - A/controleur.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1
+Aarch
+R2
+R3
+DEx4 work 10 controleur 0 22 =lB=>a`73e16`iS=cFXCa3
+l33
+L24
+VeUDA1KKI]JPz]:U^H[_?j0
+!s100 ;<TKBnl:SClCBBGZWcUM50
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Etb_controleur
+Z13 w1729670899
+R2
+R3
+R0
+Z14 8O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd
+Z15 FO:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd
+l0
+L4
+V73c9^jeZYbJ^Qk;[N;;BK1
+!s100 OeO?4ofDkZcWFE`;CzAYn2
+R6
+31
+Z16 !s110 1729670907
+!i10b 1
+Z17 !s108 1729670906.909000
+Z18 !s90 -reportprogress|300|-93|-work|work|O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd|
+Z19 !s107 O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd|
+!i113 1
+R11
+R12
+Aarch
+R2
+R3
+DEx4 work 13 tb_controleur 0 22 73c9^jeZYbJ^Qk;[N;;BK1
+l36
+L7
+VoRQROl=`QcJgX;BLngL_N2
+!s100 FPDIVlVVGK0d9kg`6g?a70
+R6
+31
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R11
+R12

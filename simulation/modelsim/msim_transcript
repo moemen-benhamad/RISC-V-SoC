@@ -1,0 +1,398 @@
+# Reading C:/altera/15.0/modelsim_ase/tcl/vsim/pref.tcl
+# do TP-A_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet work rtl_work 
+# Copying C:/altera/15.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:/altera/15.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {O:/SLE 3A S9/Systeme sur puce/TP - A/controleur.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 09:12:37 on Oct 23,2024
+# vcom -reportprogress 300 -93 -work work O:/SLE 3A S9/Systeme sur puce/TP - A/controleur.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity controleur
+# -- Compiling architecture arch of controleur
+# End time: 09:12:38 on Oct 23,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 09:12:38 on Oct 23,2024
+# vcom -reportprogress 300 -93 -work work O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_controleur
+# -- Compiling architecture arch of tb_controleur
+# End time: 09:12:38 on Oct 23,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclonev -L rtl_work -L work -voptargs="+acc"  tb_controleur
+# vsim -gui "+altera" -l msim_transcript -do "TP-A_run_msim_rtl_vhdl.do" 
+# Start time: 09:12:38 on Oct 23,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb_controleur(arch)
+# Loading work.controleur(arch)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+do TP-A_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet work rtl_work 
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {O:/SLE 3A S9/Systeme sur puce/TP - A/controleur.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 09:13:07 on Oct 23,2024
+# vcom -reportprogress 300 -93 -work work O:/SLE 3A S9/Systeme sur puce/TP - A/controleur.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity controleur
+# -- Compiling architecture arch of controleur
+# End time: 09:13:07 on Oct 23,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 09:13:07 on Oct 23,2024
+# vcom -reportprogress 300 -93 -work work O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_controleur
+# -- Compiling architecture arch of tb_controleur
+# ** Error: O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd(34): near "=": expecting ';'
+# ** Error: O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd(50): (vcom-1136) Unknown identifier "clk_t".
+# 
+# ** Error: O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd(53): Illegal target for signal assignment.
+# ** Error: O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd(53): (vcom-1136) Unknown identifier "clk_t".
+# 
+# ** Error: O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd(53): (vcom-1136) Unknown identifier "clk_t".
+# 
+# ** Error: O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd(104): VHDL Compiler exiting
+# End time: 09:13:08 on Oct 23,2024, Elapsed time: 0:00:01
+# Errors: 6, Warnings: 0
+# ** Error: C:/altera/15.0/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./TP-A_run_msim_rtl_vhdl.do line 10
+# C:/altera/15.0/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd}"
+do TP-A_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet work rtl_work 
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {O:/SLE 3A S9/Systeme sur puce/TP - A/controleur.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 09:13:32 on Oct 23,2024
+# vcom -reportprogress 300 -93 -work work O:/SLE 3A S9/Systeme sur puce/TP - A/controleur.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity controleur
+# -- Compiling architecture arch of controleur
+# End time: 09:13:33 on Oct 23,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 09:13:33 on Oct 23,2024
+# vcom -reportprogress 300 -93 -work work O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_controleur
+# -- Compiling architecture arch of tb_controleur
+# End time: 09:13:34 on Oct 23,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclonev -L rtl_work -L work -voptargs="+acc"  tb_controleur
+# vsim 
+# Start time: 09:13:35 on Oct 23,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb_controleur(arch)
+# Loading work.controleur(arch)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+do TP-A_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet work rtl_work 
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {O:/SLE 3A S9/Systeme sur puce/TP - A/controleur.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 09:49:54 on Oct 23,2024
+# vcom -reportprogress 300 -93 -work work O:/SLE 3A S9/Systeme sur puce/TP - A/controleur.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity controleur
+# -- Compiling architecture arch of controleur
+# End time: 09:49:55 on Oct 23,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 09:49:55 on Oct 23,2024
+# vcom -reportprogress 300 -93 -work work O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_controleur
+# -- Compiling architecture arch of tb_controleur
+# End time: 09:49:55 on Oct 23,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclonev -L rtl_work -L work -voptargs="+acc"  tb_controleur
+# vsim 
+# Start time: 09:49:56 on Oct 23,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb_controleur(arch)
+# Loading work.controleur(arch)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+do TP-A_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet work rtl_work 
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {O:/SLE 3A S9/Systeme sur puce/TP - A/controleur.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 09:51:45 on Oct 23,2024
+# vcom -reportprogress 300 -93 -work work O:/SLE 3A S9/Systeme sur puce/TP - A/controleur.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity controleur
+# -- Compiling architecture arch of controleur
+# End time: 09:51:45 on Oct 23,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 09:51:45 on Oct 23,2024
+# vcom -reportprogress 300 -93 -work work O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_controleur
+# -- Compiling architecture arch of tb_controleur
+# End time: 09:51:46 on Oct 23,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclonev -L rtl_work -L work -voptargs="+acc"  tb_controleur
+# vsim 
+# Start time: 09:51:47 on Oct 23,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb_controleur(arch)
+# Loading work.controleur(arch)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+do TP-A_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet work rtl_work 
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {O:/SLE 3A S9/Systeme sur puce/TP - A/controleur.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 09:56:23 on Oct 23,2024
+# vcom -reportprogress 300 -93 -work work O:/SLE 3A S9/Systeme sur puce/TP - A/controleur.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity controleur
+# -- Compiling architecture arch of controleur
+# End time: 09:56:24 on Oct 23,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 09:56:24 on Oct 23,2024
+# vcom -reportprogress 300 -93 -work work O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_controleur
+# -- Compiling architecture arch of tb_controleur
+# End time: 09:56:24 on Oct 23,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclonev -L rtl_work -L work -voptargs="+acc"  tb_controleur
+# vsim 
+# Start time: 09:56:31 on Oct 23,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb_controleur(arch)
+# Loading work.controleur(arch)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+do TP-A_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet work rtl_work 
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {O:/SLE 3A S9/Systeme sur puce/TP - A/controleur.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:06:42 on Oct 23,2024
+# vcom -reportprogress 300 -93 -work work O:/SLE 3A S9/Systeme sur puce/TP - A/controleur.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity controleur
+# -- Compiling architecture arch of controleur
+# End time: 10:06:43 on Oct 23,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:06:43 on Oct 23,2024
+# vcom -reportprogress 300 -93 -work work O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_controleur
+# -- Compiling architecture arch of tb_controleur
+# End time: 10:06:43 on Oct 23,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclonev -L rtl_work -L work -voptargs="+acc"  tb_controleur
+# vsim 
+# Start time: 10:06:44 on Oct 23,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb_controleur(arch)
+# Loading work.controleur(arch)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+do TP-A_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet work rtl_work 
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {O:/SLE 3A S9/Systeme sur puce/TP - A/controleur.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:08:26 on Oct 23,2024
+# vcom -reportprogress 300 -93 -work work O:/SLE 3A S9/Systeme sur puce/TP - A/controleur.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity controleur
+# -- Compiling architecture arch of controleur
+# End time: 10:08:26 on Oct 23,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 10:08:26 on Oct 23,2024
+# vcom -reportprogress 300 -93 -work work O:/SLE 3A S9/Systeme sur puce/TP - A/tb_controleur.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_controleur
+# -- Compiling architecture arch of tb_controleur
+# End time: 10:08:27 on Oct 23,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclonev -L rtl_work -L work -voptargs="+acc"  tb_controleur
+# vsim 
+# Start time: 10:08:28 on Oct 23,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb_controleur(arch)
+# Loading work.controleur(arch)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Break key hit
+# Simulation stop requested.
+# End time: 10:45:40 on Oct 23,2024, Elapsed time: 0:37:12
+# Errors: 0, Warnings: 0
