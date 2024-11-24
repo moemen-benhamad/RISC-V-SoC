@@ -6,7 +6,7 @@ entity pc is
 
 	generic
    (
-		ADDR_WIDTH : natural := 5
+		ADDR_WIDTH : natural := 32
    );
 
 	port
@@ -32,11 +32,7 @@ architecture arch of pc is
 					elsif load = '1' then	
 						pcc <= din;
 					else 
-						if unsigned(pcc) + 4 > 2**ADDR_WIDTH - 1 then
-							pcc <= (others => '0'); 
-						else
-							pcc <= std_logic_vector(unsigned(pcc) + 4);
-						end if;
+						pcc <= std_logic_vector(unsigned(pcc) + 4);
 					end if;
 				end if;
 		end process;

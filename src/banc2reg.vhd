@@ -1,5 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity banc2reg is
 
@@ -28,7 +29,17 @@ architecture arch of banc2reg is
 	subtype word_t is std_logic_vector((DATA_WIDTH-1) downto 0);
 	type banc_t is array(2**ADDR_WIDTH-1 downto 0) of word_t;
 	
-	signal banc : banc_t := (others => (others => '0')); -- init banc
+	 -- init banc de registres
+    function init_banc return banc_t is
+        variable banc_v : banc_t := (others => (others => '0'));
+    begin
+        for i in 0 to 2**ADDR_WIDTH - 1 loop
+            banc_v(i) := std_logic_vector(to_unsigned(i, 2**ADDR_WIDTH));  
+        end loop;
+        return banc_v;
+    end function;
+
+	 signal banc : banc_t := init_banc; -- init banc
 	
 	begin
 		BusA <= banc(RA);

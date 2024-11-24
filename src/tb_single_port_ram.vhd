@@ -7,7 +7,7 @@ end entity tb_single_port_ram;
 
 architecture behav of tb_single_port_ram is
 
-	component single_port_ram_with_init is
+	component single_port_ram is
 
 		generic 
 		(
@@ -35,7 +35,7 @@ architecture behav of tb_single_port_ram is
 	
 	begin 
 			
-		ram_1 : single_port_ram_with_init
+		ram_1 : single_port_ram
 			
 		generic map
 			(
@@ -64,7 +64,7 @@ architecture behav of tb_single_port_ram is
 
 		 for i in 0 to 7 loop
 			  addr_t <= i;
-			  data_t <= std_logic_vector(to_unsigned(7 - addr_t, 32));
+			  data_t <= std_logic_vector(to_unsigned(7 - i, 32));
 			  we_t <= '1';
 			  wait for 10 ns;
 		 end loop;

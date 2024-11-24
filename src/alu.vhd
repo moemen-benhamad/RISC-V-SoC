@@ -2,6 +2,8 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+-- RETEST!!!!
+
 entity alu is
 
 	generic
@@ -29,31 +31,31 @@ architecture arch of alu is
 			case aluOp is
 				when "0000" =>
 					res <=  std_logic_vector(unsigned(opA) + unsigned(opB));
-				when "0001" =>
+				when "1000" =>
 					res <= std_logic_vector(unsigned(opA) - unsigned(opB));
-				when "0010" =>
+				when "0001" =>
 					res <= std_logic_vector(shift_left(unsigned(opA), to_integer(unsigned(opB(4 downto 0)))));
-				when "0011" =>
+				when "0010" =>
 					if signed(opA) < signed(opB) then
-						res <= (others => '1'); -- ASK to put 1 or others => '1'
+						res <= (others => '1');
 					else
 						res <= (others => '0');
 					end if;
-				when "0100" =>
+				when "0011" =>
 					if unsigned(opA) < unsigned(opB) then
 						res <= (others => '1');
 					else
 						res <= (others => '0');
 					end if;
-				when "0101" => 
+				when "0100" => 
 					res <= opA xor opB;
-				when "0110" =>
+				when "0101" =>
 					res <= std_logic_vector(shift_right(unsigned(opA), to_integer(unsigned(opB(4 downto 0)))));
-				when "0111" => -- shift right arithmetic
+				when "1101" => -- shift right arithmetic
 					res <=  to_stdlogicvector(to_bitvector(std_logic_vector(opA)) sra to_integer(unsigned(opB(4 downto 0))));
-				when "1000" => 
+				when "0110" => 
 					res <= opA or opB;
-				when "1001" =>
+				when "0111" =>
 					res <= opA and opB;
 				when others => -- Default
 					res <= (others => '0');

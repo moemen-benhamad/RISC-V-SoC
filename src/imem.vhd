@@ -6,10 +6,10 @@ use std.textio.all;
 entity imem is
     generic 
     (
-    DATA_WIDTH  :   natural:=32;
-    ADDR_WIDTH  :   natural:=8;
-    MEM_DEPTH   :   natural:=100;
-    INIT_FILE   :   string := "INIT_FILE"
+    DATA_WIDTH  :   natural := 32;
+    ADDR_WIDTH  :   natural := 8;
+    MEM_DEPTH   :   natural := 100;
+    INIT_FILE   :   string
     );
     port 
     (
@@ -79,9 +79,6 @@ begin
     --end process;
 
     -- asynchronous reading
-    Data_Out   <=  mem(to_integer(unsigned(address)));    
-
+    Data_Out   <=  mem(to_integer(unsigned(address))); -- PROBLEM RIGHT HERE  
 
 end behav;
-
-
