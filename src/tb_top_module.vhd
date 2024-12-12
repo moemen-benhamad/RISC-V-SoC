@@ -55,7 +55,7 @@ architecture arch of tb_top_module is
 		process
 			begin
 				wait for 5*2*clk_demi_periode;
-					reset_t <= '1';
+					-- reset_t <= '1';
 					wait for 2*2*clk_demi_periode;
 					reset_t <= '0';
 					wait;

@@ -18,7 +18,9 @@ entity controleur is
 		wrMem : out std_logic;
 		load   : out std_logic;
       clk    : in std_logic;
-		funct3_out : out std_logic_vector(2 downto 0)
+		funct3_out : out std_logic_vector(2 downto 0);
+		Bsel : out std_logic; -- add to tb
+		Bres : in std_logic -- add to tb
 	);
 
 end entity;
@@ -30,11 +32,9 @@ architecture arch of controleur is
 	alias OpCode : std_logic_vector(6 downto 0) is instr(6 downto 0);
 	
 	begin
-		load <= '0';
 		funct3_out <= funct3;
-		-- aluOp <= funct7(5) & funct3;	
 		
-		process(OpCode, funct7(5), funct3)
+		process(clk, OpCode, funct7(5), funct3, Bres)
 			begin
 				case OpCode is
 					when "0110011" =>
@@ -42,30 +42,50 @@ architecture arch of controleur is
 						loadAcc <= '0';
 						we <= '1';
 						wrMem <= '0';
+						Bsel <= '0';
+						load <= '0';
 						aluOp <= funct7(5) & funct3;	
 					when "0010011" =>
 						RI_sel <= '1';
 						loadAcc <= '0';
 						we <= '1';
 						wrMem <= '0';
+						Bsel <= '0';
+						load <= '0';
 						aluOp <= funct7(5) & funct3;
 					when "0000011" =>
 						RI_sel <= '1';
 						loadAcc <= '1';
 						we <= '1';
 						wrMem <= '0';
+						Bsel <= '0';
+						load <= '0';
 						aluOp <= "0000";
 					when "0100011" => -- Type S
 						RI_sel <= '1';
 						loadAcc <= '1';
 						we <= '0';
 						wrMem <= '1';
+						Bsel <= '0';
+						load <= '0';
 						aluOp <= "0000";
+						
+					when "1100011" => -- Type B
+						RI_sel <= '1';
+						loadAcc <= '0';
+						we <= '0';
+						wrMem <= '0';
+						Bsel <= '1';
+						load <= Bres;
+						aluOp <= "0000";
+						
 					when others => 
 						RI_sel <= '0';
 						loadAcc <= '0';
 						we <= '0';
 						wrMem <= '0';
+						Bsel <= '0';
+						load <= '0';
 						aluOp <= funct7(5) & funct3;
 				end case;
 		end process;

@@ -28,11 +28,12 @@ architecture arch of top_module_load is
    signal regB_out        : std_logic_vector(DATA_WIDTH-1 downto 0) := (others => '0');
    signal alu_op          : std_logic_vector(3 downto 0) := (others => '0');
    signal we_signal       : std_logic := '0';
-   signal load_signal     : std_logic := '0';
+   signal controleur_out_load : std_logic := '0';
    signal busW            : std_logic_vector(DATA_WIDTH-1 downto 0) := (others => '0');
 	signal RA_t	: natural range 0 to (2**ADDR_WIDTH - 1) := 0; 
 	signal RB_t	: natural range 0 to (2**ADDR_WIDTH - 1) := 0;
 	signal RW_t	: natural range 0 to (2**ADDR_WIDTH - 1) := 0;
+	signal alu_in_opA : std_logic_vector((DATA_WIDTH-1) downto 0);
 	signal alu_in_opB : std_logic_vector((DATA_WIDTH-1) downto 0);
 	signal ctrl_out_RI_sel : std_logic;
 	signal immExt_out : std_logic_vector((INSTR_WIDTH - 1) downto 0);
@@ -44,6 +45,8 @@ architecture arch of top_module_load is
 	signal LM_res : std_logic_vector(1 downto 0);
 	signal LM_out : std_logic_vector(DATA_WIDTH-1 downto 0);
 	signal dmem_data	: std_logic_vector((DATA_WIDTH-1) downto 0);
+	signal BC_out_Bres : std_logic;
+	signal controleur_out_Bsel : std_logic;
 
 	component pc is
 
@@ -70,7 +73,7 @@ architecture arch of top_module_load is
 			 DATA_WIDTH  :   natural := 32;
 			 ADDR_WIDTH  :   natural := 8;
 			 MEM_DEPTH   :   natural := 100;
-			 INIT_FILE   :   string := "O:\SLE 3A S9\Systeme sur puce\TP - A\store_02.hex"
+			 INIT_FILE   :   string := "O:\SLE 3A S9\Systeme sur puce\TP - A\bge_02.hex"
 		 );
 		 port 
 		 (
@@ -118,7 +121,9 @@ architecture arch of top_module_load is
 			wrMem : out std_logic;
 			load   : out std_logic;
 			clk    : in std_logic;
-			funct3_out : out std_logic_vector(2 downto 0)	
+			funct3_out : out std_logic_vector(2 downto 0);
+			Bsel : out std_logic;
+			Bres : in std_logic
 		);
 
 	end component;
@@ -212,6 +217,20 @@ architecture arch of top_module_load is
 			  dataOut : out std_logic_vector((DATA_WIDTH - 1) downto 0)
 		 );
 	end component;
+	
+	component BC is
+	generic
+	(
+		DATA_WIDTH : natural := 32
+	);
+	 port
+	(
+		BusA   : in std_logic_vector((DATA_WIDTH-1) downto 0);
+		BusB   : in std_logic_vector((DATA_WIDTH-1) downto 0);
+		Btype  : in std_logic_vector(2 downto 0);
+		Bres   : out std_logic	
+	);
+	end component;
     
 begin
 
@@ -225,7 +244,7 @@ begin
             din   => alu_result(DATA_WIDTH - 1 downto 0),
             dout  => pc_out,
             reset => reset,
-            load  => load_signal,
+            load  => controleur_out_load,
             clk   => clk
         );
 
@@ -255,9 +274,11 @@ begin
             we     => we_signal,
 				loadAcc => controleur_loadAcc,
 				wrMem => controleur_wrMem,
-            load   => load_signal,
+            load   => controleur_out_load,
             clk    => clk,
-				funct3_out => controleur_funct3
+				funct3_out => controleur_funct3,
+				Bsel => controleur_out_Bsel, 
+				Bres => BC_out_Bres
         );
 
     banc2reg_inst: banc2reg
@@ -287,7 +308,7 @@ begin
         port map
         (
             aluOp  => alu_op,
-            opA    => regA_out,
+            opA    => alu_in_opA,
             opB    => alu_in_opB,
             res    => alu_result
         );
@@ -373,6 +394,33 @@ begin
 			res => LM_res, -- LM_res is same as SM_res
 			funct3 => controleur_funct3,
 			dataOut => dmem_data
+		);
+		
+	BC_inst : BC
+		generic map
+		(
+			DATA_WIDTH => DATA_WIDTH
+		)
+		 port map
+		(
+			BusA  => regA_out,
+			BusB  => regB_out,
+			Btype => controleur_funct3,
+			Bres  => BC_out_Bres
+		);
+		
+	mux2_instB : mux2
+		generic map
+		(
+			DATA_WIDTH => DATA_WIDTH
+		)
+		
+		port map
+		(
+			input0 => regA_out,
+			input1  => pc_out,
+			output  => alu_in_opA,
+			sel  => controleur_out_Bsel
 		);
 
 	 dmem_addr <= to_integer(unsigned(alu_result(7 downto 2) & "00")); -- alu_result(5 downto 0) & "00") ??
